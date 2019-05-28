@@ -1,0 +1,184 @@
+﻿@model IEnumerable<Indimaret.Model.Barang>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <button type="button" id="idBtnCreateBarang">Create Setunggal Data</button>
+</p>
+<table class="table" id="DataTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TokoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KodeBarang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NamaBarang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AsalPabrik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JmlBarang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LamaKadaluarsa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model)
+{
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TokoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodeBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AsalPabrik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JmlBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LamaKadaluarsa)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.ID })*@
+                <button type="button" class="btn btn-success clEditBarang" dataID=@item.ID><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>|
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+                <button type="button" class="btn btn-danger clDeleteBarang" dataID=@item.ID><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+            </td>
+        </tr>
+    </tbody>
+}
+
+</table>
+
+
+<link href="~/datatable/datatables.min.css" rel="stylesheet" type="text/css" /> @*datatable*@
+<script type="text/javascript" src="~/datatable/datatables.min.js"></script> @*datatable*@
+
+
+
+<div class="modal fade" id="idMdlCreateBarang" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                <h4 class="modal-title">Tambah Setunggal Barang</h4>
+            </div>
+            <div class="modal-body" id="idBodyCreateBarang">
+
+
+
+                @*<p>One fine body&hellip;</p>*@
+            </div>
+            @*<div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>*@
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="idMdlEditBarang" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>*@
+                <h4 class="modal-title">Edit Barang</h4>
+            </div>
+            <div class="modal-body" id="idBodyEditBarang">
+
+
+
+                @*<p>One fine body&hellip;</p>*@
+            </div>
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>*@
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+    $('.clEditBarang').click(function () {
+        var vDataID = parseInt($(this).attr('dataID'));
+        debugger;
+
+        $.ajax({
+            url: '/Barang/Edit',
+            data: { ID: vDataID },
+            method: 'Post',
+            success: function (mdl) {
+                $('#idBodyEditBarang').empty();
+                $('#idBodyEditBarang').append(mdl);
+                $('#idMdlEditBarang').modal('show');
+                debugger;
+            },
+            error: function (mdl) {
+                debugger;
+            }
+        });
+
+    });
+
+    $('.clDeleteBarang').click(function () {
+        var vDataID = parseInt($(this).attr('dataID'));
+        debugger;
+
+        $.ajax({
+            url: '/Barang/Delete',
+            data: {ID:vDataID},
+            method: 'Post',
+            success: function (mdl) {
+                location.reload();
+                debugger;
+            },
+            error: function (mdl) {
+                debugger;
+            }
+            });
+
+            });
+
+    $('#idBtnCreateBarang').click(function () {
+        $.ajax({
+            url: '/Barang/Create',
+            method: 'Get',
+            success: function (mdl) {
+                debugger;
+                $('#idBodyCreateBarang').empty();
+                $('#idBodyCreateBarang').append(mdl);
+                
+                $('#idMdlCreateBarang').modal('show');
+
+                debugger;
+            },
+            error: function (mdl) {
+                debugger;
+            }
+        });
+        
+    });
+
+
+
+</script>

@@ -1,0 +1,101 @@
+﻿@model Indimaret.Model.Barang
+
+@using (Html.BeginForm("Edit", "Barang", FormMethod.Post, new { id = "idFrmEditBarang" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Barang</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TokoID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TokoID)
+                @Html.ValidationMessageFor(model => model.TokoID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KodeBarang, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.KodeBarang)
+                @Html.ValidationMessageFor(model => model.KodeBarang)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NamaBarang, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NamaBarang)
+                @Html.ValidationMessageFor(model => model.NamaBarang)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AsalPabrik, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AsalPabrik)
+                @Html.ValidationMessageFor(model => model.AsalPabrik)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.JmlBarang, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.JmlBarang)
+                @Html.ValidationMessageFor(model => model.JmlBarang)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LamaKadaluarsa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LamaKadaluarsa)
+                @Html.ValidationMessageFor(model => model.LamaKadaluarsa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @*<input type="submit" value="Save" class="btn btn-default" />*@
+                <button type="button" class="btn btn-primary" id="idBtnEditData">Edit DONG</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    $('#idBtnEditData').click(function () {
+        debugger;
+        var vDatabarang = $('#idFrmEditBarang').serialize();
+        $.ajax({
+            url: '/Barang/EditSimpan',
+            data: vDatabarang,
+            method: 'Post',
+            success: function (mdl) {
+                if (mdl.EditSimpan == "Berhasil")
+                {
+                    debugger;
+                    alert("Data berhasil diEdit");
+                    //$('.modal').modal('hide');
+                    //$.modal.close();
+                    $('#idMdlEditBarang').close;
+                    location.reload();
+
+                }
+                else
+                {
+                    debugger;
+                    alert("Data gagal diEdit");
+                }
+            }
+        });
+    })
+</script>
