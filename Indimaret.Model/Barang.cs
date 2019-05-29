@@ -31,6 +31,9 @@ namespace Indimaret.Model
         [Required(AllowEmptyStrings=false)]
         public int JmlBarang { get; set; }
 
+        [Required(AllowEmptyStrings = false)]
+        public int Harga { get; set; }
+
         [Required(AllowEmptyStrings=false)]
         public int LamaKadaluarsa { get; set; }
     }

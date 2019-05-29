@@ -13,10 +13,10 @@ namespace Indimaret.Model
         protected override void Seed(DataContext context)
         {
             List<Barang> barang = new List<Barang>();
-            barang.Add(new Barang { TokoID = 1, KodeBarang = "KB001", NamaBarang = "Panadol", AsalPabrik = "Bogor", JmlBarang = 30, LamaKadaluarsa = 10 });
-            barang.Add(new Barang { TokoID = 2, KodeBarang = "KB002", NamaBarang = "Decolgen", AsalPabrik = "Bandung", JmlBarang = 30, LamaKadaluarsa = 10 });
-            barang.Add(new Barang { TokoID = 3, KodeBarang = "KB003", NamaBarang = "Promag", AsalPabrik = "Jakarta", JmlBarang = 30, LamaKadaluarsa = 10 });
-            barang.Add(new Barang { TokoID = 4, KodeBarang = "KB004", NamaBarang = "Actifed", AsalPabrik = "Yogya", JmlBarang = 30, LamaKadaluarsa = 10 });
+            barang.Add(new Barang { TokoID = 1, KodeBarang = "KB001", NamaBarang = "Panadol", AsalPabrik = "Bogor", JmlBarang = 30, Harga = 3500, LamaKadaluarsa = 10 });
+            barang.Add(new Barang { TokoID = 2, KodeBarang = "KB002", NamaBarang = "Decolgen", AsalPabrik = "Bandung", JmlBarang = 30, Harga = 2500, LamaKadaluarsa = 10 });
+            barang.Add(new Barang { TokoID = 3, KodeBarang = "KB003", NamaBarang = "Promag", AsalPabrik = "Jakarta", JmlBarang = 30, Harga = 2000, LamaKadaluarsa = 10 });
+            barang.Add(new Barang { TokoID = 4, KodeBarang = "KB004", NamaBarang = "Actifed", AsalPabrik = "Yogya", JmlBarang = 30, Harga = 3000, LamaKadaluarsa = 10 });
 
             base.Seed(context);
 

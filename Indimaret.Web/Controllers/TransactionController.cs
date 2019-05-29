@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Indimaret.Repo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,15 @@ namespace Indimaret.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Sample()
+        {
+            return View();
+        }
+        public ActionResult Tampil()
+        {
+            return Json(BarangRepo.GetAll(), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

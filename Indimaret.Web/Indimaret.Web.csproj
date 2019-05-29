@@ -226,6 +226,7 @@
     <Content Include="Views\Barang\_Create.cshtml" />
     <Content Include="Views\Barang\_Edit.cshtml" />
     <Content Include="Views\Transaction\Index.cshtml" />
+    <Content Include="Views\Transaction\Sample.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,217 +1,211 @@
-﻿@{
-    ViewBag.Title = "Index";
-}
-
-
-<head>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/datatable/datatables.min.js"></script>
-    <script src="~/datepicker/jquery-ui.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/mask/jquery.mask.min.js"></script>
-
-</head>
-
+﻿
 <br />
 <br />
 <br />
 <br />
-<h1>Tabel Transaksi</h1>
+
 <div class="row">
-    <div class="col-md-6 offset-4">
+    <div class="col-md-6">
         <div class="table-responsive">
             <table class="table">
                 <tr>
-                    <td>No Faktur</td>
-                    <td>: </td>
-                    <td><input type="text" name="faktur" id="idInpNoFaktur" class="form-control" placeholder="No Faktur" /></td>
+                    <td>
+                        <label for="idInpNoFaktur">No Faktur</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="idInpNoFaktur" placeholder="No Faktur">
+                    </td>
                 </tr>
                 <tr>
-                    <td>Tanggal Penjualan</td>
-                    <td>:</td>
-                    <td><input type="text" name="tgl" id="idInpTglPenjualan" class="form-control" placeholder="Tanggal Penjualan" value=""/></td>
+                    <td>
+                        <label for="idInpTglPenjualan">Tanggal Penjualan</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="idInpTglPenjualan" placeholder="Tanggla Penjualan">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td colspan="2">
+                        <input type="text" class="form-control" id="idInpPencarianBarang" placeholder="Cari">
+                    </td>
                 </tr>
             </table>
         </div>
         <div class="table-responsive">
-            <table id="idTblData" class="table table-bordered">
+            <table class="table">
                 <thead>
-                    <tr align="center">
+                    <tr>
                         <td>Nama</td>
                         <td>Harga</td>
                         <td>Aksi</td>
                     </tr>
                 </thead>
-                <tbody id="idTbodyBarang" align="center"></tbody>
+                <tbody id="idTblBodyBarang"></tbody>
             </table>
-
-            <script>
-
-                    $(document).ready(function () {
-                    var vDataBarang = [
-            { 'ID': 1, 'TokoID': 1, 'KodeBarang': "KB001", 'NamaBarang': "Panadol", 'AsalPabrik': "Bogor", 'harga': 3000, 'JmlBarang': 30, 'LamaKadaluarsa': 10 }
-            , { 'ID': 2, 'TokoID': 1, 'KodeBarang': "KB002", 'NamaBarang': "Dekolgen", 'AsalPabrik': "Bandung", 'harga': 2500, 'JmlBarang': 5, 'LamaKadaluarsa': 40 }
-            , { 'ID': 3, 'TokoID': 1, 'KodeBarang': "KB003", 'NamaBarang': "Promag", 'AsalPabrik': "Jakarta", 'harga': 2000, 'JmlBarang': 12, 'LamaKadaluarsa': 15 }
-            , { 'ID': 4, 'TokoID': 2, 'KodeBarang': "KB004", 'NamaBarang': "Vit C", 'AsalPabrik': "Yogya", 'harga': 500, 'JmlBarang': 23, 'LamaKadaluarsa': 20 }
-                    ]
-
-                    $('#idInpTglPenjualan').datepicker({
-                        minDate: 0,
-                        dateFormat: "yy-mm-dd"
-                    }).datepicker("setDate", new Date());
-
-                    $('#idInpNoFaktur').mask('NFK-0000');
-
-                    var data = "";
-                    $.each(vDataBarang, function (i, d) { //menjahit data ke dalam tabel
-                        data = data + '<tr>' +
-                            '<td>' + d.NamaBarang + '</td>' +
-                            '<td>' + d.harga + '</td>' +
-                            '<td>' +
-                            '<button type="button" class="btn btn-primary"  ><span class="glyphicon glyphicon-plus clAksiBarang" aria-hidden="true" dataBarang=\'' + JSON.stringify(d) + '\'  > </span> </button>' +
-                            '</td>' +
-                            '</tr>';
-                    });
-                    $('#idTbodyBarang').append(data); //masukan data ke dalam tabel
-                    $('#idTblData').DataTable(); //pilih id table
-                    debugger; //memberhentikan javascript
-
-
-                    var jmlClick = 0;
-                    var vJmlBarangs = 1;
-                    var vJmlBarang = 1;
-
-                    $('.clAksiBarang').click(function () {
-
-                        var vDataBarang = JSON.parse($(this).attr('dataBarang'));
-                        var data = "";
-                        var vHargaBarang = vDataBarang.harga;
-                        var vCtr = 0;
-                        var vTkp = true;
-                        if (jmlClick == 0) {
-
-                            debugger;
-                            jmlClick++;
-                            data = data + '<tr>' +
-                            '<td>' + '<input type="text" name="nama" dataID="' + vDataBarang.ID + '" class="form-control clNamaBarang" value=" ' + vDataBarang.NamaBarang + ' " />' + '</td>' +
-                            '<td>' + '<input type="text" name="jml" class="form-control clJmlBarang" value=" ' + vJmlBarang + ' " />' + '</td>' +
-                            '<td>' + '<input type="text" name="harga" class="form-control clHargaBarang" value=" ' + vHargaBarang + ' " />' + '</td>' +
-                            '<td>' +
-                            '<button type="button" class="btn btn-danger clDeleteBarang"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>' +
-                            '</td>' +
-                            '</tr>';
-                            $('#idTbodyBarang2').append(data); //masukan data ke dalam tabel
-
-                        }
-                        else {
-
-                            $('.clNamaBarang').each(function (i, d) {
-
-                                debugger;
-
-                                if (vDataBarang.ID == parseInt($(this).attr('dataID'))) {
-
-                                    vTkp = false;
-                                }                        
-                            });
-
-                            if (vTkp == false) {
-
-                                    vJmlBarangs = vJmlBarangs + 1;
-                                    $('.clJmlBarang').val(vJmlBarangs);
-                                    vHargaBarang = vJmlBarangs * vHargaBarang;
-                                    $('.clHargaBarang').val(vHargaBarang);
-
-                                    vCtr = 1;
-                                    vTkp = true;
-
-                            } else {
-
-                                    debugger;
-                                    vCtr = 0;
-                            }
-
-                            if (vCtr==0) {
-                                    data = data + '<tr>' +
-                                    '<td>' + '<input type="text" name="nama" dataID="' + vDataBarang.ID + '" class="form-control clNamaBarang" value=" ' + vDataBarang.NamaBarang + ' " />' + '</td>' +
-                                    '<td>' + '<input type="text" name="jml" class="form-control clJmlBarang" value=" ' + vJmlBarang + ' " />' + '</td>' +
-                                    '<td>' + '<input type="text" name="harga" class="form-control clHargaBarang" value=" ' + vHargaBarang + ' " />' + '</td>' +
-                                    '<td>' +
-                                    '<button type="button" class="btn btn-danger clDeleteBarang"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>' +
-                                    '</td>' +
-                                    '</tr>';
-                                    $('#idTbodyBarang2').append(data); //masukan data ke dalam tabel
-                            }
-                        }
-
-
-                        $('.clDeleteBarang').click(function () {
-                            $(this).parent().parent().remove();
-                        });
-                    });
-                });
-
-            </script>
-
-
         </div>
     </div>
-    <div class="col-md-6 offset-4">
+    <div class="col-md-6">
         <div class="table-responsive">
-                <table id="idTblData2" class="table ">
-                    <thead>
-                        <tr align="center">
-                            <td>Nama</td>
-                            <td>Jumlah</td>
-                            <td>Subtotal</td>
-                            <td>Aksi</td>
-                        </tr>
-                    </thead>
-                    <tbody id="idTbodyBarang2" align="center">
-
-                    </tbody>
-                </table>
-    </div>
-
-        <div class="table-responsive">
-            <table id="idTblData2" class="table ">
+            <table class="table">
                 <thead>
+                    <tr>
+                        <td>Nama</td>
+                        <td>Jumlah</td>
+                        <td>Sub Total</td>
+                        <td>Aksi</td>
+
+                    </tr>
                 </thead>
-                <tbody id="idTbodyBarang3" align="center">
-                    <tr>
-                        <td>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td width="250"><input type="text" name="total" class="form-control" placeholder="Total Harga" /></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td width="250"><input type="text" name="bayar" class="form-control" placeholder="Bayar" /></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td width="250"><input type="text" name="sisa" class="form-control" placeholder="Sisa" /></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td width="250"><button type="button" class="btn btn-success">Submit</button></td>
-                        <td></td>
-                    </tr>
-                </tbody>
+                <tbody id="idTblBodyTransaction"></tbody>
             </table>
         </div>
-</div>
+        <br />
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" id="idInpTotalHarga" placeholder="Total Harga">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" id="idInpBayar" placeholder="Bayar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" id="idInpSisa" placeholder="Sisa">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="col-md-3 col-md-offset-8">
+                                    <button type="button" class="btn btn-success" id="idBtnSubmitTransaction">Submit</button>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    var vDataBarang = [
+          { 'ID': 1, 'TokoID': 1, 'KodeBarang': 'KB001', 'NamaBarang': 'Panadol', 'AsalPabrik': 'Bogor', 'harga': 3000, 'JmlBarang': 30, 'LamaKadaluarsa': 10 }
+        , { 'ID': 2, 'TokoID': 1, 'KodeBarang': 'KB002', 'NamaBarang': 'Dekolgen', 'AsalPabrik': 'Bandung', 'harga': 2500, 'JmlBarang': 5, 'LamaKadaluarsa': 40 }
+        , { 'ID': 3, 'TokoID': 1, 'KodeBarang': 'KB003', 'NamaBarang': 'Promag', 'AsalPabrik': 'Jakarta', 'harga': 2000, 'JmlBarang': 12, 'LamaKadaluarsa': 15 }
+        , { 'ID': 4, 'TokoID': 2, 'KodeBarang': 'KB004', 'NamaBarang': 'Vit C', 'AsalPabrik': 'Yogya', 'harga': 500, 'JmlBarang': 23, 'LamaKadaluarsa': 20 }
+    ];
+
+    $(document).ready(function () {
+
+        var vStrHtml = '';
+        var vCtr = 0;
+        var vJmlBarang = 1;
+
+        $("#idInpTglPenjualan").datepicker({ //datepicker
+            minDate: 0,
+            dateFormat: "yy-mm-dd"
+        }).datepicker("setDate", new Date());
+
+        $('#idInpNoFaktur').mask('NFK-0000'); //mask no faktur 
+
+        $.each(vDataBarang, function (i, d) { //menjahit data ke dalam tabel
+            vStrHtml = vStrHtml + '<tr>' +
+                    '<td>' + d.NamaBarang + '</td>' +
+                    '<td>' + d.harga + '</td>' +
+                    '<td><button type = "button" class="btn btn-primary clBtnTambahBrang" dataBarang=\'' + JSON.stringify(d) + '\' > + </button></td>' +
+                '</tr>';
+        });
+
+        $('#idTblBodyBarang').append(vStrHtml); //memasukan data yg sudah di jahit ke dalam body
+
+        $('.clBtnTambahBrang').click(function () {
+
+
+            var vDataBarangDetail = JSON.parse($(this).attr('dataBarang')); //mengambil data dari button tambah barang
+            var vHargaBarang = vDataBarangDetail.harga; //mengambil harga barang dari variabel vdatabarang detail
+            var vStrHtmlTrasaksi = ''; 
+            var vTkp = true;
+            var sum = 0;
+
+            $('.clNmBarang').each(function (i, d) { //melakukan looping data yang ada pada tabel temporary transaksi
+                debugger;
+
+                if (vDataBarangDetail.ID == parseInt($(this).attr('dataID'))) { //membandingkan antara id yang tersedia pada tabel temporary dengan id barang yang sedang di klik
+
+                    vTkp = false;
+                    vJmlBarang = $(this).parent().parent().find('td input:text.clJmlBarang').val(); //mengambil jumlah barang yang ada pada tabel temporary
+                    vJmlBarang++; // menambahkan jumlah barang yang telah di ambil
+                    $(this).parent().parent().find('td input:text.clJmlBarang').val(vJmlBarang); // memasukan kembali jumlah barang yang sudah di tambahkan ke dalam form dengan class clJmlBarang
+                    vHargaBarang = vJmlBarang * vHargaBarang;
+                    $(this).parent().parent().find('td input:text.clHargaBarang').val(vHargaBarang); //memasukan harga barang ke dalam form dengan class clHargaBarang
+                    debugger;
+
+                }
+            });
+
+            if (vTkp == false) {
+                debugger;
+                vCtr = 1;
+                vTkp = true;
+            } else {
+                debugger;
+                vCtr = 0;
+            }
+            if (vCtr == 0) {
+                debugger;
+                vJmlBarang = 1;
+                vStrHtmlTrasaksi = vStrHtmlTrasaksi + '<tr>' +
+                    '<td><input type="text" class="clNmBarang" dataID="' + vDataBarangDetail.ID + '" value=" ' + vDataBarangDetail.NamaBarang + '" /></td>' +
+                    '<td><input type="text" class="clJmlBarang" value=" ' + vJmlBarang + '" /></td>' +
+                    '<td><input type="text" class="clHargaBarang" value=" ' + vHargaBarang + '" /></td>' +
+                    '<td><button type = "button" class="btn btn-danger clBtnDeleteBrang"  > - </button></td>' +
+                    '</tr>';
+                $('#idTblBodyTransaction').append(vStrHtmlTrasaksi);
+            }
+
+            $('.clBtnDeleteBrang').click(function () { //menghapus row
+                var vAmbilHarga = $(this).parent().parent().find('td input:text.clHargaBarang').val(); //mengambil harga barang yang ada pada tabel temporary
+                $(this).parent().parent().remove();
+                sum -= vAmbilHarga
+                $("#idInpTotalHarga").val(sum); //memasukkan
+                debugger;
+            });
+
+
+            $('.clHargaBarang').each(function (i, d) { // menghitung total dari subtotal
+                debugger;
+                   
+                        sum += parseInt($(this).val());
+                        $("#idInpTotalHarga").val(sum);
+                    
+            });
+
+        });
+
+        $("#idInpBayar").keypress(function (event) { //menghitung kembali dengan keypress 13 ( enter )
+            if (event.which == 13 || event.keyCode == 13) {
+                debugger;
+                var total = parseInt($("#idInpTotalHarga").val());
+                var bayar = parseInt($("#idInpBayar").val());
+                var kembali = bayar - total;
+                if (bayar >= total) {
+                    $("#idInpSisa").val(kembali);
+                } else {
+                    alert("Uang Bayar Anda Kurang");
+                    $("#idInpSisa").val('Uang Kurang');
+                }
+            }
+        });
+
+    });
+    </script>
