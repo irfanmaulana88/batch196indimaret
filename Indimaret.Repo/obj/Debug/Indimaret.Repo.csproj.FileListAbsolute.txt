@@ -22,3 +22,5 @@ D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\bin\Debug\EntityFramew
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.csprojResolveAssemblyReference.cache
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.dll
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.pdb
+D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\bin\Debug\Indimaret.ViewModel.dll
+D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\bin\Debug\Indimaret.ViewModel.pdb

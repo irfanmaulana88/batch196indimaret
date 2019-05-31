@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BarangRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -57,6 +58,10 @@
     <ProjectReference Include="..\Indimaret.Model\Indimaret.Model.csproj">
       <Project>{1e263452-f3b9-4e75-8389-c5068034f2fb}</Project>
       <Name>Indimaret.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Indimaret.ViewModel\Indimaret.ViewModel.csproj">
+      <Project>{9EF79031-41A8-45E7-9AC9-4EAA9DC39B42}</Project>
+      <Name>Indimaret.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

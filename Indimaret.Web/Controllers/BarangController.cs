@@ -58,7 +58,7 @@ namespace Indimaret.Web.Controllers
         {
             if (BarangRepo.Editbarang(barang))
             {
-                return Json(new { EditSimpan = "Berhasil" }, JsonRequestBehavior.AllowGet);
+                return Json(new { EditSimpan = "Berhasil" }, JsonRequestBehavior.AllowGet); //return json digunakan untuk memunculkan alert
             }
             else
             {

@@ -8,134 +8,134 @@
 <br />
 
 <h2>Transaksi Penjualan</h2>
+<form id="idFrmTransaction">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <label for="idInpNoFaktur">No Faktur</label>
+                        </td>
+                        <td>
+                            <input type="text" name="NoFaktur" class="form-control" id="idInpNoFaktur" placeholder="No Faktur">
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="idInpTglPenjualan">Tanggal Penjualan</label>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" name="TransactionDate" id="idInpTglPenjualan" placeholder="Tanggal Penjualan">
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                                Lihat Data Barang
+                            </button>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td width="250">
+                            <input type="text" class="form-control" id="idInpPencarian" placeholder="Search">
+                        </td>
+                    </tr>
+                </table>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="table-responsive">
-            <table class="table">
-                <tr>
-                    <td>
-                        <label for="idInpNoFaktur">No Faktur</label>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" id="idInpNoFaktur" placeholder="No Faktur">
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="idInpTglPenjualan">Tanggal Penjualan</label>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" id="idInpTglPenjualan" placeholder="Tanggal Penjualan">
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-                            Lihat Data Barang
-                        </button>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td width="250">
-                        <input type="text" class="form-control" id="idInpPencarian" placeholder="Search">
-                    </td>
-                </tr>
-            </table>
-            
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Data Barang</h4>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Data Barang</h4>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td>Nama</td>
+                                            <td>Harga</td>
+                                            <td>Aksi</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="idTblBodyBarang"></tbody>
+                                </table>
+                            </div>
+                            @*<div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>*@
                         </div>
-                        <div class="modal-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <td>Nama</td>
-                                        <td>Harga</td>
-                                        <td>Aksi</td>
-                                    </tr>
-                                </thead>
-                                <tbody id="idTblBodyBarang"></tbody>
-                            </table>
-                        </div>
-                        @*<div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>*@
                     </div>
                 </div>
-            </div>
-            <!-- End Of Modal -->
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
+                <!-- End Of Modal -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Nama</td>
+                                <td>Jumlah</td>
+                                <td>Sub Total</td>
+                                <td>Aksi</td>
+
+                            </tr>
+                        </thead>
+                        <tbody id="idTblBodyTransaction"></tbody>
+                    </table>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="table-responsive">
+                    <table class="table">
                         <tr>
-                            <td>Nama</td>
-                            <td>Jumlah</td>
-                            <td>Sub Total</td>
-                            <td>Aksi</td>
-
+                            <td></td>
+                            <td></td>
+                            <td width="300">
+                                <input type="text" name="Total" class="form-control" id="idInpTotalHarga" placeholder="Total Harga">
+                            </td>
+                            <td></td>
                         </tr>
-                    </thead>
-                    <tbody id="idTblBodyTransaction"></tbody>
-                </table>
-            </div>
-            <br />
-            <br />
-            <br />
-            <div class="table-responsive">
-                <table class="table">
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td width="300">
-                            <input type="text" class="form-control" id="idInpTotalHarga" placeholder="Total Harga">
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td width="300">
-                            <input type="text" class="form-control" id="idInpBayar" placeholder="Bayar">
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td width="300">
-                            <input type="text" class="form-control" id="idInpSisa" placeholder="Sisa">
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div class="col-md-3 col-md-offset-8">
-                                <button type="button" class="btn btn-success" id="idBtnSubmitTransaction">Submit</button>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td width="300">
+                                <input type="text"  class="form-control" id="idInpBayar" placeholder="Bayar">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td width="300">
+                                <input type="text" name="CashReturn" class="form-control" id="idInpSisa" placeholder="Sisa">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="col-md-3 col-md-offset-8">
+                                    <button type="button" class="btn btn-success" id="idBtnSubmitTransaction">Submit</button>
 
-                            </div>
-                        </td>
-                        <td></td>
-                    </tr>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
 
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
+</form>
 <script>
     //var vDataBarang = [
     //      { 'ID': 1, 'TokoID': 1, 'KodeBarang': 'KB001', 'NamaBarang': 'Panadol', 'AsalPabrik': 'Bogor', 'harga': 3000, 'JmlBarang': 30, 'LamaKadaluarsa': 10 }
@@ -163,12 +163,13 @@
 
 
                 $('.clBtnTambahBrang').click(function () {
-
+                    debugger;
 
                     var vDataBarangDetail = JSON.parse($(this).attr('dataBarang')); //mengambil data dari button tambah barang
                     var vHargaBarang = vDataBarangDetail.Harga; //mengambil harga barang dari variabel vdatabarang detail
                     var vStrHtmlTrasaksi = '';
                     var sum = 0;
+                    var vJmlBarang = 1;
                     debugger;
 
                     $('.clNmBarang').each(function (i, d) { //melakukan looping data yang ada pada tabel temporary transaksi
@@ -187,6 +188,7 @@
                         }
                     });
 
+
                     if (vTkp == false) {
                         debugger;
 
@@ -199,14 +201,23 @@
                     }
                     if (vCtr == 0) {
                         debugger;
-                        vJmlBarang = 1;
                         vStrHtmlTrasaksi = vStrHtmlTrasaksi + '<tr>' +
-                            '<td><input type="text" class="clNmBarang" dataID="' + vDataBarangDetail.ID + '" value=" ' + vDataBarangDetail.NamaBarang + '" /></td>' +
-                            '<td><input type="text" class="clJmlBarang" value=" ' + vJmlBarang + '" /></td>' +
+                            '<td>' +
+                            '<input type="text" class="clNmBarang" dataID="' + vDataBarangDetail.ID + '" value=" ' + vDataBarangDetail.NamaBarang + '" />' +
+                            '<input type="hidden" name="TrxDetail[0].BarangID" class="clIdBarang"  value="' + vDataBarangDetail.ID + '" />' +
+                            '</td>' +
+
+                            '<td>' +
+                            '<input type="text" class="clJmlBarang" value=" ' + vJmlBarang + '" />' +
+                            '<input type="hidden" class="clJmlBarang" name="TrxDetail[0].Quantity"  value="' + vJmlBarang + '" />' + //belom bener valuenya
+                            '</td>' +
+
                             '<td><input type="text" class="clHargaBarang" value=" ' + vHargaBarang + '" /></td>' +
                             '<td><button type = "button" class="btn btn-danger clBtnDeleteBrang"  > - </button></td>' +
                             '</tr>';
                         $('#idTblBodyTransaction').append(vStrHtmlTrasaksi);
+                        reIndexTable(); //memanggil fungsi re indexing
+                        reIndexTableQuantity(); //memanggil fungsi re indexing
                     }
 
 
@@ -268,6 +279,68 @@
                 }
             }
         });
+
+        //tombol untuk menyimpan data transaksi
+        $('#idBtnSubmitTransaction').click(function () {
+            debugger;
+            //mengambil data dari form
+            var vDataTransaction = $('#idFrmTransaction').serialize();
+            debugger;
+            $.ajax({
+                url: '/Transaction/SaveTransaction',
+                data:vDataTransaction,
+                method: 'Post',
+                success: function (mdl) {
+                    if (mdl.hasil == "Berhasil") {
+                        alert("Data berhasil disimpan");
+                        //$('.modal').modal('hide');
+                        //$.modal.close();
+                        $('#idMdlCreateBarang').close;
+                        location.reload();
+
+                    }
+                    else {
+                        alert("Data gagal disimpan");
+                    }
+                }
+            });
+
+        });
     });
+
+
+    //re indexing nama barang
+    function reIndexTable() {
+        var rowCount = $('#idTblBodyTransaction tr').length;
+        //alert(rowCount);
+        if (rowCount > 0) {
+            var idx = 0;
+            $.each($("#idTblBodyTransaction").find("tr"), function (i, val) {
+                //alert(idx);
+                var vIdBarang = $(this).find(":input[name*='.BarangID']");
+                $(vIdBarang).attr("name", vIdBarang.attr("name").replace(/\[.*?]\s?/g, "[" + idx + "]"));
+
+                idx += 1;
+            });
+        }
+    }
+
+
+    //re indexing quantity
+    function reIndexTableQuantity() {
+        var rowCount = $('#idTblBodyTransaction tr').length;
+        //alert(rowCount);
+        if (rowCount > 0) {
+            var idx = 0;
+            $.each($("#idTblBodyTransaction").find("tr"), function (i, val) {
+                //alert(idx);
+                var vQuantityBarang = $(this).find(":input[name*='.Quantity']");
+                $(vQuantityBarang).attr("name", vQuantityBarang.attr("name").replace(/\[.*?]\s?/g, "[" + idx + "]"));
+
+                idx += 1;
+            });
+        }
+    }
+
 </script>
 

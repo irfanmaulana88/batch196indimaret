@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="Barang.cs" />
     <Compile Include="DataContext.cs" />
+    <Compile Include="DetailTransaction.cs" />
     <Compile Include="Initializer.cs" />
+    <Compile Include="MasterTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

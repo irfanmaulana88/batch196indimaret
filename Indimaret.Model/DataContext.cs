@@ -18,6 +18,9 @@ namespace Indimaret.Model
 
         public virtual DbSet<Barang> Barang { get; set; }
 
+        public virtual DbSet<MasterTransaction> MasterTransaction { get; set; }
+        public virtual DbSet<DetailTransaction> DetailTransaction { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
