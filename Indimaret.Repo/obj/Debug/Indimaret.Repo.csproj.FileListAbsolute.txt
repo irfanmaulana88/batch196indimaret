@@ -24,3 +24,17 @@ D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\obj\Debug\Indimaret.Re
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.pdb
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\bin\Debug\Indimaret.ViewModel.dll
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Repo\bin\Debug\Indimaret.ViewModel.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\Indimaret.Repo.dll.config
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\Indimaret.Repo.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\Indimaret.Repo.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\EntityFramework.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\Indimaret.Model.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\Indimaret.ViewModel.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\Indimaret.Model.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\Indimaret.ViewModel.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\EntityFramework.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.csprojResolveAssemblyReference.cache
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.pdb

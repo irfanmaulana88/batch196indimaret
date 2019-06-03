@@ -18,3 +18,13 @@ D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Model\bin\Debug\EntityFrame
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Model\obj\Debug\Indimaret.Model.csprojResolveAssemblyReference.cache
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Model\obj\Debug\Indimaret.Model.dll
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Model\obj\Debug\Indimaret.Model.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Model\bin\Debug\Indimaret.Model.dll.config
+E:\Project Xsis\batch196indimaret\Indimaret.Model\bin\Debug\Indimaret.Model.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Model\bin\Debug\Indimaret.Model.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Model\bin\Debug\EntityFramework.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Model\bin\Debug\EntityFramework.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Model\obj\Debug\Indimaret.Model.csprojResolveAssemblyReference.cache
+E:\Project Xsis\batch196indimaret\Indimaret.Model\obj\Debug\Indimaret.Model.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Model\obj\Debug\Indimaret.Model.pdb

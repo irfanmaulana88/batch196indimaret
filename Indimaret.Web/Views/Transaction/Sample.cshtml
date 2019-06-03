@@ -146,6 +146,11 @@
 
     $(document).ready(function () {
 
+
+        var vStrHtml = '';
+        var vCtr = 0;
+        var vTkp = true;
+
         $.ajax({
             url: '/Transaction/Tampil',
             method: 'Get',
@@ -161,6 +166,7 @@
 
                 $('#idTblBodyBarang').append(vStrHtml); //memasukan data yg sudah di jahit ke dalam body
 
+                var vJmlBarang = 0; // ditaro diluar fungsi tambah barang , agar quantitynya tidak ter reset
 
                 $('.clBtnTambahBrang').click(function () {
                     debugger;
@@ -169,7 +175,7 @@
                     var vHargaBarang = vDataBarangDetail.Harga; //mengambil harga barang dari variabel vdatabarang detail
                     var vStrHtmlTrasaksi = '';
                     var sum = 0;
-                    var vJmlBarang = 1;
+
                     debugger;
 
                     $('.clNmBarang').each(function (i, d) { //melakukan looping data yang ada pada tabel temporary transaksi
@@ -200,6 +206,7 @@
                         vCtr = 0;
                     }
                     if (vCtr == 0) {
+                        vJmlBarang = 1;
                         debugger;
                         vStrHtmlTrasaksi = vStrHtmlTrasaksi + '<tr>' +
                             '<td>' +
@@ -208,8 +215,7 @@
                             '</td>' +
 
                             '<td>' +
-                            '<input type="text" class="clJmlBarang" value=" ' + vJmlBarang + '" />' +
-                            '<input type="hidden" class="clJmlBarang" name="TrxDetail[0].Quantity"  value="' + vJmlBarang + '" />' + //belom bener valuenya
+                            '<input type="text" class="clJmlBarang" name="TrxDetail[0].Quantity"  value="' + vJmlBarang + '" />' + //belom bener valuenya
                             '</td>' +
 
                             '<td><input type="text" class="clHargaBarang" value=" ' + vHargaBarang + '" /></td>' +
@@ -238,21 +244,11 @@
 
                 });
 
-
-
             },
             error: function (mdl) {
                 debugger;
             }
         });
-
-
-        var vStrHtml = '';
-        var vCtr = 0;
-        var vTkp = true;
-        var vJmlBarang = 1;
-
-
 
 
         $("#idInpTglPenjualan").datepicker({ //datepicker

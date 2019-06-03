@@ -53,3 +53,32 @@ D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Web\obj\Debug\Indimaret.Web
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Web\bin\Microsoft.Web.Infrastructure.dll
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Web\bin\Indimaret.ViewModel.dll
 D:\Bootcamp-196\day18\day17lat1\sIndimaret\Indimaret.Web\bin\Indimaret.ViewModel.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.Web.dll.config
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.Web.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.Web.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\EntityFramework.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\EntityFramework.SqlServer.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.Model.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.Repo.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.ViewModel.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Microsoft.Web.Infrastructure.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Helpers.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Mvc.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Razor.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Webpages.Deployment.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Webpages.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Webpages.Razor.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.Model.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.Repo.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\Indimaret.ViewModel.pdb
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\EntityFramework.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\EntityFramework.SqlServer.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Razor.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Webpages.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Webpages.Deployment.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Webpages.Razor.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Helpers.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Web\bin\System.Web.Mvc.xml
+E:\Project Xsis\batch196indimaret\Indimaret.Web\obj\Debug\Indimaret.Web.csprojResolveAssemblyReference.cache
+E:\Project Xsis\batch196indimaret\Indimaret.Web\obj\Debug\Indimaret.Web.dll
+E:\Project Xsis\batch196indimaret\Indimaret.Web\obj\Debug\Indimaret.Web.pdb
