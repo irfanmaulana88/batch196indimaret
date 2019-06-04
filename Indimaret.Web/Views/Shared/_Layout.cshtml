@@ -23,10 +23,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+                @Html.ActionLink("PT. XSIS", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li> @*nama navbar, nama cshtml , nama folder yg dituju*@
+                    <li>@Html.ActionLink("Transaksi", "Sample", "Transaction")</li>
+                    <li>@Html.ActionLink("Barang", "Index", "Barang")</li>
                 </ul>
             </div>
         </div>
@@ -36,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Create By Irfan Maulana</p>
         </footer>
     </div>
 
